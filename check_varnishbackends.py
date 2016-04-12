@@ -61,8 +61,21 @@ def main(argv):
     sys.exit(2)
 
   if not backends_sick and not backends_healthy:
-    print "No backends detected.  If this is an error, see readme.txt"
-    sys.exit(1)
+    child_ok = False
+    command = runcommand("%(path)s -S %(secret)s -T %(host)s:%(port)s status" % options.__dict__)
+    response = command.split("/n")
+    for line in response:
+      if line.startswith("Child in state running"):
+        child_ok = True
+        break
+
+    if child_ok:
+      print "Child in state running"
+      sys.exit(0)
+
+    else:
+      print "No backends detected.  If this is an error, see readme.txt"
+      sys.exit(1)
 
   print "All %s backends are healthy" % (len(backends_healthy))
   sys.exit(0)
