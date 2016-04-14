@@ -36,6 +36,9 @@ This health check allows you to monitor the state of your backends for Nagios/Ic
 
 ## Change Log
 
+## v1.2 - 16 Apr 2016
+- Added compatibility with Varnish 4.1
+
 ## v1.1 - 2 July 2014
 - Added notice regarding .probe
 - Merged into own repo with active change log
