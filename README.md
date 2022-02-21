@@ -36,6 +36,11 @@ This health check allows you to monitor the state of your backends for Nagios/Ic
 
 ## Change Log
 
+## v1.3 - 21 Feb 2022
+- Migrated to Python 3
+- Varnish 6.2 compatibility
+- Improved output
+
 ## v1.2 - 16 Apr 2016
 - Added compatibility with Varnish 4.1
 
