@@ -1,0 +1,5 @@
+[flake8]
+# E221 multiple spaces before operator
+ignore = E221
+exclude = .git,__pycache__,old,build,dist
+max-complexity = 12
